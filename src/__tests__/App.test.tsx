@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import { withOnClickDelay } from './hoc/WithOnClickDelay'
+import { withOnClickDelay } from '../hoc/WithOnClickDelay'
 
 const TestButton: React.FC<{ onClick?: () => void; disabled?: boolean }> = ({
 	onClick,

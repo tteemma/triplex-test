@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Тестовое задание: HOC withOnClickDelay
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+Проект реализует HOC `withOnClickDelay` для компонента `Button` из Triplex UI Kit (Sberbank). HOC добавляет задержку клика: после нажатия кнопка становится неактивной на заданное время (по умолчанию 10 секунд). Включает тесты и базовый CRA-проект.
 
-In the project directory, you can run:
+## Реализация
 
-### `npm start`
+- **HOC**: `withOnClickDelay` использует `useState` и `useCallback` для управления состоянием `disabled`. Перехватывает `onClick`, выполняет исходный обработчик, отключает кнопку и включает её после задержки через `setTimeout`.
+- **Клиентский код**: В `App` используются два `DelayedButton` (обёрнутый `Button`) с разными размерами и темами.
+- **Тесты**: Юнит-тесты на Jest и React Testing Library проверяют:
+  - Вызов `onClick` при клике.
+  - Отключение кнопки после клика.
+  - Включение кнопки после задержки.
+- **Зависимости**: `@sberbusiness/triplex`, стандартные зависимости CRA.
+- **Стили**: Минимальная стилизация в `App.css` и inline-стилях.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Структура проекта
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+project-root/
+├── src/
+│   ├── hoc/
+│   │   └── WithOnClickDelay.tsx      # HOC
+│   ├── __tests__/
+│   │   └── WithOnClickDelay.test.tsx # Тесты
+│   ├── App.tsx                       # Главный компонент
+│   ├── App.css                       # Стили
+│   ├── index.tsx                     # Точка входа
+├── package.json                      # Зависимости
+└── README.md                         # Этот файл
+```
 
-### `npm test`
+## Установка и запуск
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Склонировать репозиторий.
+2. Установить зависимости: `npm i`.
+3. Запустить проект: `npm start`.
+4. Запустить тесты: `npm test`.
 
-### `npm run build`
+## Оценка времени
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **План**: 1–2 часа.
+- **Фактически**: 1 час.
