@@ -14,10 +14,10 @@ project-root/
 │   ├── __tests__/
 │   │   └── WithOnClickDelay.test.tsx # Тесты
 │   ├── App.tsx                       # Главный компонент
-│   ├── App.css                       # Стили
-│   ├── index.tsx                     # Точка входа
-├── package.json                      # Зависимости
-└── README.md                         # Этот файл
+│   ├── App.css                       
+│   ├── index.tsx                     
+├── package.json                     
+└── README.md                         
 ```
 
 ## Установка и запуск
