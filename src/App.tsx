@@ -20,7 +20,7 @@ export const App: React.FC = () => {
 				<h1>Тестовое задание для Сбербанка</h1>
 				<p>HOC WithOnClickDelay</p>
 
-				<article style={{ margin: '20px 0' }}>
+				<div style={{ margin: '20px 0' }}>
 					<DelayedButton
 						onClick={handleClick}
 						size={EButtonSize.MD}
@@ -28,9 +28,9 @@ export const App: React.FC = () => {
 					>
 						Click me (10s delay)
 					</DelayedButton>
-				</article>
+				</div>
 
-				<article style={{ margin: '20px 0' }}>
+				<div style={{ margin: '20px 0' }}>
 					<DelayedButton
 						onClick={() => console.log('Secondary button clicked')}
 						size={EButtonSize.SM}
@@ -38,7 +38,7 @@ export const App: React.FC = () => {
 					>
 						Secondary Button (10s delay)
 					</DelayedButton>
-				</article>
+				</div>
 
 				<p style={{ maxWidth: '600px', margin: '20px auto', fontSize: '14px' }}>
 					После клика на любую кнопку она становится неактивной на 10 секунд.
